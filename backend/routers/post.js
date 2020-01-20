@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
   }
 })
 
-router.get("/", async(req, res, next) => {
+router.get("/", auth, async(req, res, next) => {
   const pageSize = parseInt(req.query.pageSize);
   const currentPage = parseInt(req.query.page);
   //const postQuery = await Post.find({})
